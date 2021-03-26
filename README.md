@@ -11,6 +11,10 @@ Quick installation under Anaconda:
 ```
 conda create --name DRAGON python=3.6
 conda activate DRAGON
+pip install -r requirements.txt
+```
+Manually installation with pip
+```
 pip install numpy==1.15.4
 pip install pandas==0.25.3
 pip install scipy==1.1.0
@@ -21,10 +25,6 @@ pip install matplotlib==3.1.1
 ```
 
 ## Data Preparation
-```
-wget https://chechiklab.biu.ac.il/~dvirsamuel/DRAGON/data.tar
-tar xvf data.tar
-```
 Datasets: CUB, SUN and AWA.  
 Download `data.tar` from [here](https://chechiklab.biu.ac.il/~dvirsamuel/DRAGON/data.tar), untar it and place it under the **project root directory**.
 ```
@@ -38,6 +38,12 @@ DRAGON
 | fusion
 ...
 ```
+
+```
+wget https://chechiklab.biu.ac.il/~dvirsamuel/DRAGON/data.tar
+tar xvf data.tar
+```
+
 
 ## Train Experts and Fusion Module
 **Reproduce results for `DRAGON` and its modules (Table 1 in our paper):**  
