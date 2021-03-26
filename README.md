@@ -18,7 +18,6 @@ Quick installation under Anaconda:
 conda create --name DRAGON python=3.6
 conda activate DRAGON
 and then install the packages from Requirements section manually
-
 ```
 
 ## Data Preparation
