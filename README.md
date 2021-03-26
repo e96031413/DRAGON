@@ -119,3 +119,23 @@ If you find our paper and repo useful, please cite:
   booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
   year      = {2021}}
 ```
+
+## 完整訓練，以CUB為例
+```
+# 1
+PYTHONPATH="./" python visual_expert/main.py --base_train_dir=./checkpoints/CUB --dataset_name=CUB --transfer_task=DRAGON --train_dist=dragon --data_dir=data --batch_size=64 --max_epochs=100 --initial_learning_rate=0.0003 --l2=0.005
+
+PYTHONPATH="./" python attribute_expert/main.py --base_train_dir=./checkpoints/CUB --dataset_name=CUB --transfer_task=DRAGON --data_dir=data --train_dist=dragon --batch_size=64 --max_epochs=100 --initial_learning_rate=0.001 --LG_beta=1e-7 --LG_lambda=0.0001 --SG_gain=3 --SG_psi=0.01 --SG_num_K=-1
+
+# 2
+PYTHONPATH="./" python visual_expert/main.py --base_train_dir=./checkpoints/CUB --dataset_name=CUB --transfer_task=DRAGON --train_dist=dragon --data_dir=data --batch_size=64 --max_epochs=100 --initial_learning_rate=0.0003 --l2=0.005 --test_mode
+
+PYTHONPATH="./" python attribute_expert/main.py --base_train_dir=./checkpoints/CUB --dataset_name=CUB --transfer_task=DRAGON --data_dir=data --train_dist=dragon --batch_size=64 --max_epochs=100 --initial_learning_rate=0.001 --LG_beta=1e-7 --LG_lambda=0.0001 --SG_gain=3 --SG_psi=0.01 --SG_num_K=-1 --test_mode
+
+# 把checkpoints/CUB裡面的 `Visual-lr=0.0003_l2=0.005` 資料夾改名成 `Visual` 和 `LAGO-lr=0.001_beta=1e-07_lambda=0.0001_gain=3.0_psi=0.01` 資料夾改名成 `LAGO`
+# 3
+PYTHONPATH="./" python fusion/main.py --base_train_dir=./checkpoints/CUB --dataset_name=CUB --data_dir=data --initial_learning_rate=0.005 --batch_size=64 --max_epochs=50 --sort_preds=1 --freeze_experts=1 --nparams=2
+
+# 4 測試
+PYTHONPATH="./" python fusion/main.py --base_train_dir=./checkpoints/CUB --dataset_name=CUB --data_dir=data --initial_learning_rate=0.005 --batch_size=64 --max_epochs=50 --sort_preds=1 --freeze_experts=1 --nparams=2 --test_mode
+```
