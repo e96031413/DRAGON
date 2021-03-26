@@ -25,6 +25,7 @@ pip install tensorflow==1.14.0
 pip install keras==2.2.5
 pip install scikit-learn==0.19.0
 pip install matplotlib==3.1.1
+pip install h5py==2.10
 ```
 
 ## Data Preparation
