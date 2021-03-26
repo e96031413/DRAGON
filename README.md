@@ -4,7 +4,7 @@
 [Video](https://www.youtube.com/watch?v=sFfbVopSOEs&t=2s)
 
 ### Note
-程式碼似乎有Early Stopping的功能，當停住時會產生一些錯誤、程式碼完成訓練後會跳出，也會產生錯誤
+程式碼有Early Stopping的功能
 
 ## Overview
 `DRAGON` learns to correct the bias towards head classes on a sample-by-sample basis; and fuse information from class-descriptions to improve the tail-class accuracy, as described in our paper: Samuel, Atzmon and Chechik, ["From Generalized zero-shot learning to long-tail with class descriptors"](http://arxiv.org/abs/2004.02235).
