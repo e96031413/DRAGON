@@ -21,6 +21,10 @@ and then install the packages from Requirements section manually
 ```
 
 ## Data Preparation
+```
+wget https://chechiklab.biu.ac.il/~dvirsamuel/DRAGON/data.tar
+tar xvf data.tar
+```
 Datasets: CUB, SUN and AWA.  
 Download `data.tar` from [here](https://chechiklab.biu.ac.il/~dvirsamuel/DRAGON/data.tar), untar it and place it under the **project root directory**.
 ```
