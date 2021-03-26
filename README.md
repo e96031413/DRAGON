@@ -7,17 +7,16 @@
 `DRAGON` learns to correct the bias towards head classes on a sample-by-sample basis; and fuse information from class-descriptions to improve the tail-class accuracy, as described in our paper: Samuel, Atzmon and Chechik, ["From Generalized zero-shot learning to long-tail with class descriptors"](http://arxiv.org/abs/2004.02235).
 
 ## Requirements
-- numpy  1.15.4
-- pandas 0.25.3
-- scipy 1.1.0
-- tensorflow 1.14.0
-- keras 2.2.5
-
 Quick installation under Anaconda:
 ```
 conda create --name DRAGON python=3.6
 conda activate DRAGON
-and then install the packages from Requirements section manually
+pip install numpy==1.15.4
+pip install pandas==0.25.3
+pip install scipy==1.1.0
+pip install tensorflow==1.14.0
+pip install keras==2.2.5
+pip install scikit-learn==0.19.0
 ```
 
 ## Data Preparation
